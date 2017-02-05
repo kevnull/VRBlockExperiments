@@ -35,9 +35,8 @@ namespace Com.MyCompany.MyGame
 				Debug.Log("We are Instantiating LocalPlayer from "+Application.loadedLevelName);
 				// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
 				GameObject playergo = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,0f,0f), Quaternion.identity, 0);
-                playergo.transform.localPosition = Vector3.zero;
-                playergo.transform.localRotation = Quaternion.identity;
-                playergo.transform.SetParent(VRTK_DeviceFinder.HeadsetCamera());
+				playergo.transform.position = VRTK_DeviceFinder.HeadsetTransform ().position;
+				playergo.transform.rotation = VRTK_DeviceFinder.HeadsetTransform ().rotation;
             }
             else
             {

@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 4951214677048740}
   - component: {fileID: 114833420720388770}
   - component: {fileID: 114947149012660692}
+  - component: {fileID: 114707173412176106}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -280,6 +281,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1457778429597294}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114707173412176106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1898654888132060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5c8615ed74a4b0c9d6edd9bc3eb6b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114833420720388770
 MonoBehaviour:
   m_ObjectHideFlags: 1

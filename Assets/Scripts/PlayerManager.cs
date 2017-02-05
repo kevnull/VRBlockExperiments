@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class PlayerManager : Photon.PunBehaviour {
 
@@ -18,6 +19,11 @@ public class PlayerManager : Photon.PunBehaviour {
 		// #Critical
 		// we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
 		DontDestroyOnLoad(this.gameObject);
+	}
+
+	void Update () {
+		transform.position = VRTK_DeviceFinder.HeadsetTransform ().position;
+		transform.rotation = VRTK_DeviceFinder.HeadsetTransform ().rotation;
 	}
 
 }
