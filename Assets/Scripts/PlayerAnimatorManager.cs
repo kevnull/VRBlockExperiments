@@ -46,9 +46,7 @@ namespace Com.MyCompany.MyGame
             {
                 v = 0;
             }
-
-            Debug.Log(h + " : " + v);
-
+				
             animator.SetFloat("Speed", h * h + v * v);
             animator.SetFloat("Direction", h, DirectionDampTime, Time.deltaTime);
 
