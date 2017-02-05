@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heist.Plugins", "Heist.Plugins.csproj", "{31777AF0-72F4-02AC-BD05-3F941E438984}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heist", "Heist.csproj", "{0E3690C7-5C1C-2D3B-B89E-28803B068B4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heist.Editor", "Heist.Editor.csproj", "{5D8128DB-5741-0AFF-305F-E31D0F3D258C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31777AF0-72F4-02AC-BD05-3F941E438984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31777AF0-72F4-02AC-BD05-3F941E438984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31777AF0-72F4-02AC-BD05-3F941E438984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31777AF0-72F4-02AC-BD05-3F941E438984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E3690C7-5C1C-2D3B-B89E-28803B068B4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E3690C7-5C1C-2D3B-B89E-28803B068B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E3690C7-5C1C-2D3B-B89E-28803B068B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E3690C7-5C1C-2D3B-B89E-28803B068B4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D8128DB-5741-0AFF-305F-E31D0F3D258C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D8128DB-5741-0AFF-305F-E31D0F3D258C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D8128DB-5741-0AFF-305F-E31D0F3D258C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D8128DB-5741-0AFF-305F-E31D0F3D258C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
