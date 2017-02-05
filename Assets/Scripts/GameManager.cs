@@ -37,6 +37,7 @@ namespace Com.MyCompany.MyGame
 				GameObject playergo = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,0f,0f), Quaternion.identity, 0);
 				playergo.transform.position = VRTK_DeviceFinder.HeadsetTransform ().position;
 				playergo.transform.rotation = VRTK_DeviceFinder.HeadsetTransform ().rotation;
+                PhotonNetwork.Instantiate("Inventory", new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
             }
             else
             {

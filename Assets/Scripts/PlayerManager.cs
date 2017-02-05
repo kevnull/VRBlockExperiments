@@ -22,7 +22,13 @@ public class PlayerManager : Photon.PunBehaviour {
 	}
 
 	void Update () {
-		transform.position = VRTK_DeviceFinder.HeadsetTransform ().position;
+
+        if (photonView.isMine == false && PhotonNetwork.connected == true)
+        {
+            return;
+        }
+
+        transform.position = VRTK_DeviceFinder.HeadsetTransform ().position;
 		transform.rotation = VRTK_DeviceFinder.HeadsetTransform ().rotation;
 	}
 
