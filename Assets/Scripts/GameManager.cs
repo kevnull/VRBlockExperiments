@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections;
-
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using VRTK;
 
 
 namespace Com.MyCompany.MyGame
@@ -36,7 +35,7 @@ namespace Com.MyCompany.MyGame
 				Debug.Log("We are Instantiating LocalPlayer from "+Application.loadedLevelName);
 				// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
 				GameObject playergo = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,0f,0f), Quaternion.identity, 0);
-				playergo.transform.SetParent (VRTK.VRTK_DeviceFinder.HeadsetCamera);
+				playergo.transform.SetParent (VRTK_DeviceFinder.HeadsetCamera());
 			}else{
 				Debug.Log("Ignoring scene load for "+Application.loadedLevelName);
 			}
