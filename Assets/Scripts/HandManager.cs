@@ -5,8 +5,12 @@ using VRTK;
 
 public class HandManager : Photon.PunBehaviour {
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
-	void Update () {
+    void Update () {
 
         if (photonView.isMine == false && PhotonNetwork.connected == true)
         {
