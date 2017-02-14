@@ -132,7 +132,7 @@ MonoBehaviour:
   synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
-  ownershipTransfer: 1
+  ownershipTransfer: 0
   ObservedComponents:
   - {fileID: 114977121376488940}
   ObservedComponentsFoldoutOpen: 1
@@ -224,7 +224,7 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 4
+    InterpolateOption: 3
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 10
     InterpolateMoveTowardsAcceleration: 2
@@ -266,7 +266,7 @@ MonoBehaviour:
     DrawErrorGizmo: 1
   m_RotationModel:
     SynchronizeEnabled: 1
-    InterpolateOption: 1
+    InterpolateOption: 0
     InterpolateRotateTowardsSpeed: 180
     InterpolateLerpSpeed: 5
   m_ScaleModel:
