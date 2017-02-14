@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 1898654888132060, guid: f9aad1df6435ea94983453fa0ebe03f9,
     type: 2}
-  lhandPrefab: {fileID: 1352125226979672, guid: 7c792a89f4cbc6b49ab0c8d1c5a5731c,
+  lhandPrefab: {fileID: 1625668373548294, guid: d6a41f6910b62504a96c91c69a4ba19d,
     type: 2}
-  rhandPrefab: {fileID: 1352125226979672, guid: df825db9a97a7e84f91bdfeec1d5ec68,
+  rhandPrefab: {fileID: 1625668373548294, guid: aa5195e4ebceb58438e773ded2a0589f,
     type: 2}
