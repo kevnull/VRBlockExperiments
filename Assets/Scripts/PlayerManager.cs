@@ -29,7 +29,7 @@ public class PlayerManager : Photon.PunBehaviour {
         }
 
         transform.position = VRTK_DeviceFinder.HeadsetTransform ().position;
-		transform.rotation = VRTK_DeviceFinder.HeadsetTransform ().rotation;
+		transform.FindChild("Head").rotation = VRTK_DeviceFinder.HeadsetTransform ().rotation;
 	}
 
 }
