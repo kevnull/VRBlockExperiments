@@ -16,12 +16,12 @@ public class HandManager : Photon.PunBehaviour {
         Vector3 pos = Vector3.zero;
         Quaternion rot = Quaternion.identity;
 
-        if (name == "LHand")
+        if (name.Contains("LHand"))
         {
             pos = VRTK_DeviceFinder.GetControllerLeftHand(true).transform.position;
             rot = VRTK_DeviceFinder.GetControllerLeftHand(true).transform.rotation;
         }
-        else if (name == "RHand")
+        else if (name.Contains("RHand"))
         {
             pos = VRTK_DeviceFinder.GetControllerRightHand(true).transform.position;
             rot = VRTK_DeviceFinder.GetControllerRightHand(true).transform.rotation;
