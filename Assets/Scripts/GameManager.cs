@@ -12,6 +12,8 @@ namespace Com.MyCompany.MyGame
 
 		[Tooltip("The prefab to use for representing the player")]
 		public GameObject playerPrefab;
+        public GameObject lhandPrefab;
+        public GameObject rhandPrefab;
 
         #region Photon Messages
 
@@ -36,11 +38,14 @@ namespace Com.MyCompany.MyGame
 				// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
 				GameObject playergo = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,0f,0f), Quaternion.identity, 0);
 				playergo.transform.position = VRTK_DeviceFinder.HeadsetTransform ().position;
+                PhotonNetwork.Instantiate(this.lhandPrefab.name, VRTK_DeviceFinder.GetControllerLeftHand(true).transform.position, VRTK_DeviceFinder.GetControllerLeftHand(true).transform.rotation, 0);
+                PhotonNetwork.Instantiate(this.rhandPrefab.name, VRTK_DeviceFinder.GetControllerRightHand(true).transform.position, VRTK_DeviceFinder.GetControllerRightHand(true).transform.rotation, 0);
             }
             else
             {
 				Debug.Log("Ignoring scene load for "+Application.loadedLevelName);
 			}
+            var temp = PhotonVoiceNetwork.Client;
 		}
 
         #region Public Methods
@@ -102,6 +107,10 @@ namespace Com.MyCompany.MyGame
             }
         }
 
+        private void OnDestroy()
+        {
+
+        }
 
         #endregion
     }
