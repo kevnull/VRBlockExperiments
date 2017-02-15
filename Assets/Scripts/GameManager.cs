@@ -14,6 +14,7 @@ namespace Com.MyCompany.MyGame
 		public GameObject playerPrefab;
         public GameObject lhandPrefab;
         public GameObject rhandPrefab;
+        public Transform[] spawnPoints;
 
         #region Photon Messages
 
@@ -35,8 +36,9 @@ namespace Com.MyCompany.MyGame
 			if (PlayerManager.LocalPlayerInstance==null)
 			{
 				Debug.Log("We are Instantiating LocalPlayer from "+Application.loadedLevelName);
-				// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-				GameObject playergo = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,0f,0f), Quaternion.identity, 0);
+                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+                
+                GameObject playergo = PhotonNetwork.Instantiate(this.playerPrefab.name, spawnPoints[PhotonNetwork.playerList.Length-1].position, Quaternion.identity, 0);
 				playergo.transform.position = VRTK_DeviceFinder.HeadsetTransform ().position;
                 PhotonNetwork.Instantiate(this.lhandPrefab.name, VRTK_DeviceFinder.GetControllerLeftHand(true).transform.position, VRTK_DeviceFinder.GetControllerLeftHand(true).transform.rotation, 0);
                 PhotonNetwork.Instantiate(this.rhandPrefab.name, VRTK_DeviceFinder.GetControllerRightHand(true).transform.position, VRTK_DeviceFinder.GetControllerRightHand(true).transform.rotation, 0);
