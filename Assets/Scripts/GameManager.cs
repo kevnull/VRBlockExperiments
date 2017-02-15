@@ -45,6 +45,7 @@ namespace Com.MyCompany.MyGame
             {
 				Debug.Log("Ignoring scene load for "+Application.loadedLevelName);
 			}
+            var temp = PhotonVoiceNetwork.Client;
 		}
 
         #region Public Methods
@@ -106,6 +107,10 @@ namespace Com.MyCompany.MyGame
             }
         }
 
+        private void OnDestroy()
+        {
+
+        }
 
         #endregion
     }
