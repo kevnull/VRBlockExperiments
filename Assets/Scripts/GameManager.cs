@@ -61,21 +61,6 @@ namespace Com.MyCompany.MyGame
 
         #endregion
 
-        #region Private Methods
-
-
-        void LoadArena()
-        {
-            if (!PhotonNetwork.isMasterClient)
-            {
-                Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
-            }
-            Debug.Log("PhotonNetwork : Loading Level : " + PhotonNetwork.room.playerCount);
-            PhotonNetwork.LoadLevel("Room");
-        }
-
-
-        #endregion
 
         #region Photon Messages
 
@@ -88,9 +73,6 @@ namespace Com.MyCompany.MyGame
             if (PhotonNetwork.isMasterClient)
             {
                 Debug.Log("OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient); // called before OnPhotonPlayerDisconnected
-
-
-                LoadArena();
             }
         }
 
@@ -103,9 +85,6 @@ namespace Com.MyCompany.MyGame
             if (PhotonNetwork.isMasterClient)
             {
                 Debug.Log("OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient); // called before OnPhotonPlayerDisconnected
-
-
-                LoadArena();
             }
         }
 
