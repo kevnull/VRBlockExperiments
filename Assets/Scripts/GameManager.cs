@@ -14,6 +14,7 @@ namespace Com.MyCompany.MyGame
 		public GameObject playerPrefab;
         public GameObject lhandPrefab;
         public GameObject rhandPrefab;
+        public Transform[] spawnPoints;
 
         #region Photon Messages
 
@@ -29,15 +30,16 @@ namespace Com.MyCompany.MyGame
 
         #endregion
 
-
 		public void Start()
 		{
-			if (PlayerManager.LocalPlayerInstance==null)
+
+            if (PlayerManager.LocalPlayerInstance==null)
 			{
 				Debug.Log("We are Instantiating LocalPlayer from "+Application.loadedLevelName);
-				// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-				GameObject playergo = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,0f,0f), Quaternion.identity, 0);
-				playergo.transform.position = VRTK_DeviceFinder.HeadsetTransform ().position;
+                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+                
+                GameObject playergo = PhotonNetwork.Instantiate(this.playerPrefab.name, spawnPoints[PhotonNetwork.playerList.Length-1].position, Quaternion.identity, 0);
+                VRTK_DeviceFinder.PlayAreaTransform().position = spawnPoints[PhotonNetwork.playerList.Length - 1].position;
                 PhotonNetwork.Instantiate(this.lhandPrefab.name, VRTK_DeviceFinder.GetControllerLeftHand(true).transform.position, VRTK_DeviceFinder.GetControllerLeftHand(true).transform.rotation, 0);
                 PhotonNetwork.Instantiate(this.rhandPrefab.name, VRTK_DeviceFinder.GetControllerRightHand(true).transform.position, VRTK_DeviceFinder.GetControllerRightHand(true).transform.rotation, 0);
             }
@@ -59,21 +61,6 @@ namespace Com.MyCompany.MyGame
 
         #endregion
 
-        #region Private Methods
-
-
-        void LoadArena()
-        {
-            if (!PhotonNetwork.isMasterClient)
-            {
-                Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
-            }
-            Debug.Log("PhotonNetwork : Loading Level : " + PhotonNetwork.room.playerCount);
-            PhotonNetwork.LoadLevel("Room");
-        }
-
-
-        #endregion
 
         #region Photon Messages
 
@@ -86,9 +73,6 @@ namespace Com.MyCompany.MyGame
             if (PhotonNetwork.isMasterClient)
             {
                 Debug.Log("OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient); // called before OnPhotonPlayerDisconnected
-
-
-                LoadArena();
             }
         }
 
@@ -101,9 +85,6 @@ namespace Com.MyCompany.MyGame
             if (PhotonNetwork.isMasterClient)
             {
                 Debug.Log("OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient); // called before OnPhotonPlayerDisconnected
-
-
-                LoadArena();
             }
         }
 
