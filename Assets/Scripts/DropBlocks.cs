@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,7 @@ public class DropBlocks : Photon.PunBehaviour {
     public Transform[] blockSpawn;
     public GameObject floor;
 
+    private GameObject block;
     private float elapsed = 0;
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,15 @@ public class DropBlocks : Photon.PunBehaviour {
         if (elapsed > minSecsPerDrop)
         {
             if (!floor.activeSelf)
-                PhotonNetwork.InstantiateSceneObject("MBlock"+Mathf.Pow(2,Mathf.RoundToInt(Random.Range(1,3))), blockSpawn[Mathf.RoundToInt(Random.Range(0, blockSpawn.Length))].position, Quaternion.identity, 0, null);
+                if (PhotonNetwork.connected)
+                {
+                    PhotonNetwork.InstantiateSceneObject("MBlock", blockSpawn[Mathf.RoundToInt(Random.Range(0, blockSpawn.Length))].position, Quaternion.identity, 0, null);
+                }
+                else
+                {
+                    block = (GameObject) Instantiate(Resources.Load("MBlock"));
+                    block.transform.position = blockSpawn[Mathf.RoundToInt(Random.Range(0, blockSpawn.Length))].position;
+                }
             elapsed = 0;
         }
 	}
