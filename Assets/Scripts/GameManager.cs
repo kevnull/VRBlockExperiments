@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +14,7 @@ namespace Heist
 		public GameObject playerPrefab;
         public GameObject lhandPrefab;
         public GameObject rhandPrefab;
+        public Transform[] spawnPoints;
 
         #region Photon Messages
 
@@ -29,19 +30,16 @@ namespace Heist
 
         #endregion
 
-
 		public void Start()
 		{
-			if (PlayerManager.LocalPlayerInstance==null)
+
+      if (PlayerManager.LocalPlayerInstance==null)
 			{
 				Debug.Log("We are Instantiating LocalPlayer from "+Application.loadedLevelName);
-<<<<<<< Updated upstream
-				// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-				GameObject playergo = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,0f,0f), Quaternion.identity, 0);
-				playergo.transform.position = VRTK_DeviceFinder.HeadsetTransform ().position;
-                PhotonNetwork.Instantiate(this.lhandPrefab.name, VRTK_DeviceFinder.GetControllerLeftHand(true).transform.position, VRTK_DeviceFinder.GetControllerLeftHand(true).transform.rotation, 0);
-                PhotonNetwork.Instantiate(this.rhandPrefab.name, VRTK_DeviceFinder.GetControllerRightHand(true).transform.position, VRTK_DeviceFinder.GetControllerRightHand(true).transform.rotation, 0);
-=======
+                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+                
+                GameObject playergo = PhotonNetwork.Instantiate(this.playerPrefab.name, spawnPoints[PhotonNetwork.playerList.Length-1].position, Quaternion.identity, 0);
+                VRTK_DeviceFinder.PlayAreaTransform().position = spawnPoints[PhotonNetwork.playerList.Length - 1].position;
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
                 
                 if (PhotonNetwork.connected)
@@ -51,13 +49,12 @@ namespace Heist
                     PhotonNetwork.Instantiate(this.rhandPrefab.name, VRTK_DeviceFinder.GetControllerRightHand(true).transform.position, VRTK_DeviceFinder.GetControllerRightHand(true).transform.rotation, 0);
                 }
                 VRTK_DeviceFinder.PlayAreaTransform().position = spawnPoints[PhotonNetwork.playerList.Length - 1].position;
->>>>>>> Stashed changes
             }
-            else
-            {
-				Debug.Log("Ignoring scene load for "+Application.loadedLevelName);
-			}
-            var temp = PhotonVoiceNetwork.Client;
+      else
+      {
+			  	Debug.Log("Ignoring scene load for "+Application.loadedLevelName);
+      }
+          var temp = PhotonVoiceNetwork.Client;
 		}
 
         #region Public Methods
@@ -71,21 +68,6 @@ namespace Heist
 
         #endregion
 
-        #region Private Methods
-
-
-        void LoadArena()
-        {
-            if (!PhotonNetwork.isMasterClient)
-            {
-                Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
-            }
-            Debug.Log("PhotonNetwork : Loading Level : " + PhotonNetwork.room.playerCount);
-            PhotonNetwork.LoadLevel("Room");
-        }
-
-
-        #endregion
 
         #region Photon Messages
 
@@ -98,9 +80,6 @@ namespace Heist
             if (PhotonNetwork.isMasterClient)
             {
                 Debug.Log("OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient); // called before OnPhotonPlayerDisconnected
-
-
-                LoadArena();
             }
         }
 
@@ -113,9 +92,6 @@ namespace Heist
             if (PhotonNetwork.isMasterClient)
             {
                 Debug.Log("OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient); // called before OnPhotonPlayerDisconnected
-
-
-                LoadArena();
             }
         }
 

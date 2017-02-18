@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace Com.MyCompany.MyGame
 {
@@ -23,7 +23,7 @@ namespace Com.MyCompany.MyGame
 
 
         #region Private Variables
-
+        string roomName;
         bool isConnecting;
 
         /// <summary>
@@ -77,8 +77,9 @@ namespace Com.MyCompany.MyGame
         /// - If already connected, we attempt joining a random room
         /// - if not yet connected, Connect this application instance to Photon Cloud Network
         /// </summary>
-        public void Connect()
+        public void Connect(string name)
         {
+            roomName = name;
             isConnecting = true; 
 
             progressLabel.SetActive(true);
@@ -149,7 +150,7 @@ namespace Com.MyCompany.MyGame
 
                 // #Critical
                 // Load the Room Level. 
-                PhotonNetwork.LoadLevel("Room");
+                PhotonNetwork.LoadLevel("Room - " + roomName);
             }
             Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         }

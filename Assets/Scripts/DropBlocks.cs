@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,6 @@ public class DropBlocks : Photon.PunBehaviour {
     public GameObject floor;
 
     private GameObject block;
-
     private float elapsed = 0;
 	// Use this for initialization
 	void Start () {

@@ -34,8 +34,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1908911745532170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -10}
-  m_LocalScale: {x: 20, y: 3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,3 +57,6 @@ MonoBehaviour:
     type: 2}
   rhandPrefab: {fileID: 1625668373548294, guid: aa5195e4ebceb58438e773ded2a0589f,
     type: 2}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
