@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4182104913413968}
   - component: {fileID: 33908049181950918}
-  - component: {fileID: 135147432409010976}
   - component: {fileID: 23156725278815012}
   m_Layer: 0
   m_Name: Head
@@ -41,7 +40,7 @@ GameObject:
   - component: {fileID: 135018786473828684}
   - component: {fileID: 23875321186156946}
   m_Layer: 0
-  m_Name: Eye (1)
+  m_Name: Eye (Right)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,10 +70,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4898003876660300}
   - component: {fileID: 33135696747720282}
-  - component: {fileID: 135944737111212700}
   - component: {fileID: 23545280887118396}
   m_Layer: 0
-  m_Name: Eye
+  m_Name: Eye (Left)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -527,30 +525,6 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1537206960255032}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135147432409010976
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1457778429597294}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135944737111212700
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1638639688716314}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
