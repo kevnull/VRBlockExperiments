@@ -25,7 +25,12 @@ public class CreateLego : Photon.PunBehaviour {
         {
             go = (GameObject) Instantiate(Resources.Load(blockPrefab.name));
         }
-        go.transform.position = transform.position;
-        go.transform.rotation = transform.rotation;
+
+        VRTK_ObjectAutoGrab autograb = GetComponent<VRTK_ObjectAutoGrab>();
+
+        autograb.objectToGrab = go.GetComponent<VRTK_InteractableObject>();
+        autograb.enabled = true;
+        autograb.enabled = false;
+
     }
 }

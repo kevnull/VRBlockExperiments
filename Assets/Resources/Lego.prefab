@@ -11652,7 +11652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightObjectPrefab: {fileID: 1794487836516952, guid: 17e6f3a34effc8d409e37b77c5e1a445,
     type: 2}
-  snapType: 2
+  snapType: 0
   snapDuration: 0
   applyScalingOnSnap: 0
   highlightColor: {r: 0.79927945, g: 0.89705884, b: 0.8363682, a: 0.459}
@@ -11672,7 +11672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightObjectPrefab: {fileID: 1794487836516952, guid: 17e6f3a34effc8d409e37b77c5e1a445,
     type: 2}
-  snapType: 2
+  snapType: 0
   snapDuration: 0
   applyScalingOnSnap: 0
   highlightColor: {r: 0.79927945, g: 0.89705884, b: 0.8363682, a: 0.459}
@@ -11707,7 +11707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightObjectPrefab: {fileID: 1794487836516952, guid: 17e6f3a34effc8d409e37b77c5e1a445,
     type: 2}
-  snapType: 2
+  snapType: 0
   snapDuration: 0
   applyScalingOnSnap: 0
   highlightColor: {r: 0.79927945, g: 0.89705884, b: 0.8363682, a: 0.459}
@@ -11770,11 +11770,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 0
+  precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 0
+  throwMultiplier: 1
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
@@ -11791,7 +11791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightObjectPrefab: {fileID: 1794487836516952, guid: 17e6f3a34effc8d409e37b77c5e1a445,
     type: 2}
-  snapType: 2
+  snapType: 0
   snapDuration: 0
   applyScalingOnSnap: 0
   highlightColor: {r: 0.79927945, g: 0.89705884, b: 0.8363682, a: 0.459}
@@ -11826,7 +11826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightObjectPrefab: {fileID: 1794487836516952, guid: 17e6f3a34effc8d409e37b77c5e1a445,
     type: 2}
-  snapType: 2
+  snapType: 0
   snapDuration: 0
   applyScalingOnSnap: 0
   highlightColor: {r: 0.79927945, g: 0.89705884, b: 0.8363682, a: 0.459}
@@ -11887,7 +11887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightObjectPrefab: {fileID: 1794487836516952, guid: 17e6f3a34effc8d409e37b77c5e1a445,
     type: 2}
-  snapType: 2
+  snapType: 0
   snapDuration: 0
   applyScalingOnSnap: 0
   highlightColor: {r: 0.79927945, g: 0.89705884, b: 0.8363682, a: 0.459}

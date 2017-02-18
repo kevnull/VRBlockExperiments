@@ -143,7 +143,7 @@ namespace Com.MyCompany.MyGame
         public override void OnJoinedRoom()
         {
             // #Critical: We only load if we are the first player, else we rely on  PhotonNetwork.automaticallySyncScene to sync our instance scene.
-            if (PhotonNetwork.room.playerCount == 1)
+            if (PhotonNetwork.room.PlayerCount == 1)
             {
                 Debug.Log("We load the 'Room for 1' ");
 

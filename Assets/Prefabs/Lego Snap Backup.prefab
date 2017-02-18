@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 114101638341180364}
   - component: {fileID: 114323559568535724}
   m_Layer: 0
-  m_Name: Lego Snap
+  m_Name: Lego Snap Backup
   m_TagString: lego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
