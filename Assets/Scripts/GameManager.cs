@@ -64,21 +64,6 @@ namespace Heist
 
         #endregion
 
-        #region Private Methods
-
-
-        void LoadArena()
-        {
-            if (!PhotonNetwork.isMasterClient)
-            {
-                Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
-            }
-            Debug.Log("PhotonNetwork : Loading Level : " + PhotonNetwork.room.playerCount);
-            PhotonNetwork.LoadLevel("Room");
-        }
-
-
-        #endregion
 
         #region Photon Messages
 
@@ -91,9 +76,6 @@ namespace Heist
             if (PhotonNetwork.isMasterClient)
             {
                 Debug.Log("OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient); // called before OnPhotonPlayerDisconnected
-
-
-                LoadArena();
             }
         }
 
@@ -106,9 +88,6 @@ namespace Heist
             if (PhotonNetwork.isMasterClient)
             {
                 Debug.Log("OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient); // called before OnPhotonPlayerDisconnected
-
-
-                LoadArena();
             }
         }
 

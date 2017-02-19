@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionSound : MonoBehaviour {
+public class JengaManager : MonoBehaviour {
 
-    // Use this for initialization
+    // Play sounds whenever collision happens
     private void OnCollisionEnter(Collision collision)
     {
         AudioSource aud;
@@ -12,4 +12,12 @@ public class CollisionSound : MonoBehaviour {
         if (!aud.isPlaying)
             aud.Play();
     }
+
+	// Destroy if it falls past a certain height
+	void Update ()
+	{
+		if (transform.position.y < -150f) {
+			Destroy (this.gameObject);
+		}
+	}
 }
