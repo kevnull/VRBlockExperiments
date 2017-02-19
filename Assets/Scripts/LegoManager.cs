@@ -60,7 +60,6 @@ public class LegoManager : MonoBehaviour {
 
     private void makeBridge(int id)
     {
-        id = 2;
         int i = 0;
         GameObject go;
         Transform b;
@@ -83,7 +82,7 @@ public class LegoManager : MonoBehaviour {
 
         if (PhotonNetwork.connected)
         {
-            go = PhotonNetwork.Instantiate("Bridge", b.position, b.rotation, 0);
+            go = PhotonNetwork.Instantiate("Bridge"+id, b.position, b.rotation, 0);
         }
         else
         {
@@ -91,8 +90,6 @@ public class LegoManager : MonoBehaviour {
             go.transform.position = b.position;
             go.transform.rotation = b.rotation;
         }
-
-        go.GetComponent<Renderer>().material.color = (id == 1) ? Color.blue : Color.red;
 
         bool emptyslots = false;
         for (i = 0; i < bridgeCreated.Length; i++)
